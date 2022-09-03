@@ -5,7 +5,7 @@ use nannou::prelude::*;
 static RADIUS: f32 = 50.0;
 fn main() {
     // nannou::app(model).update(update).simple_window(view).run()
-    nannou::sketch(view).size(100, 100).run();
+    nannou::sketch(view).size(400, 400).run();
 }
 
 struct Model {}
@@ -20,7 +20,7 @@ fn view(app: &App, frame: Frame) {
     let draw = app.draw();
     draw.background().color(WHITE);
 
-    mine(app);
+    mine(&draw);
 
     //理想(mackeee)
     // let boundary = app.window_rect();
