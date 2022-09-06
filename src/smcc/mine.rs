@@ -1,14 +1,25 @@
 use nannou::prelude::*;
 
+const N_POINTS: i32 = 100;
+
 pub fn mine(draw: &Draw) {
     let radius = 150.0;
-    let points = (0..=360).step_by(72).map(|i| {
-        let radian = deg_to_rad(i as f32);
-        let x = radian.sin() * radius;
-        let y = radian.cos() * radius;
-        pt2(x, y)
+    // let points = (0..=360).step_by(72).map(|i| {
+    //     let radian = deg_to_rad(i as f32);
+    //     let x = radian.sin() * radius;
+    //     let y = radian.cos() * radius;
+    //     pt2(x, y)
+    // });
+    let points = (0..N_POINTS).map(|k| {
+        let t = 2.0 * PI * k as f32 / N_POINTS as f32;
+        let x = 16.0 * t.sin().powi(3);
+        let y = 13.0 * t.cos() - 5.0 * (2.0 * t).cos() - 2.0 * (3.0 * t).cos() - (4.0 * t).cos();
+        let point = pt2(x, y) * 12.0;
+        (point, srgb8(248, 24, 24))
     });
-    draw.polygon().color(STEELBLUE).points(points);
+
+    draw.polygon().points_colored(points);
+    // draw.polygon().color(STEELBLUE).points(points);
 
     // 自前のコード
     // for i in -100..100 {

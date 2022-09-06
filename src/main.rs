@@ -1,11 +1,11 @@
 mod smcc;
 use crate::smcc::mine::mine;
+use crate::smcc::question::question;
 use nannou::prelude::*;
 
-static RADIUS: f32 = 50.0;
 fn main() {
     // nannou::app(model).update(update).simple_window(view).run()
-    nannou::sketch(view).size(400, 400).run();
+    nannou::sketch(view).size(700, 700).run();
 }
 
 struct Model {}
@@ -18,9 +18,10 @@ fn update(_app: &App, _model: &mut Model, _update: Update) {}
 
 fn view(app: &App, frame: Frame) {
     let draw = app.draw();
-    draw.background().color(WHITE);
+    // draw.background().color(WHITE);
 
-    mine(&draw);
+    // mine(&draw);
+    question(app);
 
     //理想(mackeee)
     // let boundary = app.window_rect();
