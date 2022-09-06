@@ -20,7 +20,7 @@ pub fn question(app: &App) {
         pt2(x, y)
     });
 
-    let another_points = pt2(t % win.w(), t.sin()) * 100.0;
+    let another_points = pt2(t % TAU - 2.0, t.sin()) * 100.0;
 
     let center_points = {
         let x = radius * (TAU * t).cos();
