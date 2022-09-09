@@ -1,5 +1,5 @@
 use nannou::prelude::*;
-use nannou::{App, Draw};
+use nannou::App;
 
 pub fn question(app: &App) {
     let win = app.window_rect();
