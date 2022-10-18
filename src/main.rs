@@ -4,11 +4,9 @@ mod smcc;
 
 fn main() {
     // nannou::app(model).update(update).run();
-
-    smcc::row_of_number::row_of_number(6, 1, 1);
-    smcc::row_of_number::row_of_number(10, 1, 2);
-    smcc::row_of_number::row_of_number(31, 41, 59);
-    smcc::row_of_number::row_of_number(45, 1, 1);
+    smcc::question_gcd::question_gcd("2/6");
+    smcc::question_gcd::question_gcd("2/7");
+    smcc::question_gcd::question_gcd("10/5");
 }
 //
 // struct Model {
