@@ -4,9 +4,9 @@ mod smcc;
 
 fn main() {
     // nannou::app(model).update(update).run();
-    smcc::question_gcd::question_gcd("2/6");
-    smcc::question_gcd::question_gcd("2/7");
-    smcc::question_gcd::question_gcd("10/5");
+    smcc::min_cents_num::min_cents_num(46);
+    smcc::min_cents_num::min_cents_num(93);
+    smcc::min_cents_num::min_cents_num(23);
 }
 //
 // struct Model {
