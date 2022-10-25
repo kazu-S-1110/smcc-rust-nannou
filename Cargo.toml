@@ -7,3 +7,5 @@ edition = "2021"
 
 [dependencies]
 nannou = "0.18.1"
+[dependencies.jsonway]
+git = "https://github.com/rustless/jsonway"

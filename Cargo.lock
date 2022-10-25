@@ -873,6 +873,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "jsonway"
+version = "2.0.0"
+source = "git+https://github.com/rustless/jsonway#860754052f3dc3478790e8a0084ce176e5a2c861"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "khronos-egl"
 version = "4.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1842,6 +1851,7 @@ checksum = "2fd0db749597d91ff862fd1d55ea87f7855a744a8425a64695b6fca237d1dad1"
 name = "smcc-rust-nannou"
 version = "0.1.0"
 dependencies = [
+ "jsonway",
  "nannou",
 ]
 
