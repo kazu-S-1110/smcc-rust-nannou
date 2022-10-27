@@ -4,3 +4,11 @@ pub fn max_diff(num_arr: Vec<i32>) -> i32 {
 
     max - min
 }
+
+pub fn max_exclude_one(num_arr: Vec<i32>) -> i32 {
+    let mut total = 0;
+    for i in &num_arr {
+        total += i
+    }
+    total - num_arr.iter().min().unwrap()
+}
