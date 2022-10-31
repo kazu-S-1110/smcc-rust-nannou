@@ -44,4 +44,7 @@ fn view(app: &App, frame: Frame) {
     }
 
     draw.to_frame(app, &frame).unwrap()
+
+
+    println!("test")
 }
