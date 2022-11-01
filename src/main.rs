@@ -3,7 +3,6 @@ use nannou::prelude::*;
 static RADIUS: f32 = 25.0;
 
 fn main() {
-    // nannou::app(model).update(update).simple_window(view).run()
     nannou::sketch(view).size(100, 100).run();
 }
 
