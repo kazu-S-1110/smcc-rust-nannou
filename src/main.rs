@@ -6,14 +6,6 @@ fn main() {
     nannou::sketch(view).size(100, 100).run();
 }
 
-struct Model {}
-
-fn model(_app: &App) -> Model {
-    Model {}
-}
-
-fn update(_app: &App, _model: &mut Model, _update: Update) {}
-
 fn view(app: &App, frame: Frame) {
     let draw = app.draw();
     draw.background().color(WHITE);

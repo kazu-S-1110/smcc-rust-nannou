@@ -9,3 +9,10 @@ edition = "2021"
 nannou = "0.18.1"
 [dependencies.jsonway]
 git = "https://github.com/rustless/jsonway"
+
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+opt-level = 3
