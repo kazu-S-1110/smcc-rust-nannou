@@ -7,4 +7,6 @@
 // pub mod row_of_number;
 // pub mod triangle_area;
 // pub mod max_diff;
-pub mod stairs;
+// pub mod stairs;
+// pub mod calc_area;
+pub mod reduce;
