@@ -10,5 +10,6 @@ nannou = "0.18.1"
 serde = { version = "1.0"}
 serde_json = "1.0"
 serde_yaml = "0.9"
+anyhow ="1.0" 
 [dependencies.jsonway]
 git = "https://github.com/rustless/jsonway"
