@@ -1,44 +1,22 @@
-use serde::{Deserialize, Serialize};
+use std::fs::{create_dir_all, File};
+use std::io::{BufWriter, Write};
+use std::path::Path;
 
-extern crate serde_json;
-use std::env;
-use std::fs::File;
-use std::io::{prelude::*, BufReader};
+use anyhow::Result;
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Config {
-    id: String,
-    firstName: String,
-    lastName: String,
-    group: String,
-}
+const BOM: &[u8; 3] = &[0xEF, 0xBB, 0xBF]; // UTF-8
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
+fn main() -> Result<()> {
+    let output_dir = Path::new("out");
+    create_dir_all(&output_dir)?;
 
-    let filename = &args[1];
+    let mut w = BufWriter::new(File::create(output_dir.join("smcc.csv"))?);
 
-    let mut f = File::open(filename).expect("file not found");
-    let reader = BufReader::new(f);
+    w.write_all(BOM)?;
 
-    // let mut contents = String::new();
-    // f.read_to_string(&mut contents)
-    // .expect("something went wrong reading the file");
-    // println!("With text:\n{}", contents);
+    writeln!(w, "id,1")?;
+    writeln!(w, "name,hoge")?;
+    writeln!(w, "age,40")?;
 
-    // let config: Config = serde_json::from_reader(reader).unwrap();
-
-    // println!("Desrieialized Config = {:?}", config);
-
-    let values: Config = serde_yaml::from_reader(reader).unwrap();
-
-    println!("Desrieialized valus = {:?}", values);
-
-    let new_f = std::fs::OpenOptions::new()
-        .write(true)
-        .create(true)
-        .open("new_config.yml")
-        .expect("Couldn't open file");
-
-    serde_yaml::to_writer(new_f, &values).unwrap();
+    Ok(())
 }
